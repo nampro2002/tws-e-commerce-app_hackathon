@@ -1,4 +1,4 @@
-@Library('Shared') _
+ @Library('Shared') _
 
 pipeline {
     agent any
@@ -39,7 +39,6 @@ pipeline {
                                 imageTag: env.DOCKER_IMAGE_TAG,
                                 dockerfile: 'Dockerfile',
                                 context: '.'
-                                buildArgs: '--no-cache'
                             )
                         }
                     }
