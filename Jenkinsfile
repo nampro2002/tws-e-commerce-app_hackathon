@@ -39,6 +39,7 @@ pipeline {
                                 imageTag: env.DOCKER_IMAGE_TAG,
                                 dockerfile: 'Dockerfile',
                                 context: '.'
+                                buildArgs:    '--no-cache'
                             )
                         }
                     }
