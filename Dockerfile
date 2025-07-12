@@ -1,5 +1,5 @@
 # Stage 1: Development/Build Stage
-FROM node:18-alpine AS builder
+FROM node:18-alpine AS builder1
 
 # Set working directory
 WORKDIR /app
@@ -26,9 +26,9 @@ FROM node:18-alpine AS runner
 WORKDIR /app
 
 # Copy necessary files from builder stage
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/public ./public
+COPY --from=builder1 /app/.next/standalone ./
+COPY --from=builder1 /app/.next/static ./.next/static
+COPY --from=builder1 /app/public ./public
 
 # Set environment variables
 ENV NODE_ENV=production
