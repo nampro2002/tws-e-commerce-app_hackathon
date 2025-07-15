@@ -436,6 +436,7 @@ helm show values prometheus-community/kube-prometheus-stack > kube-prom-stack.ya
 ```
 
 edit the file and add the following in the params for prometheus, grafana and alert manger.
+enable ingress: true
 
 **Grafana:**
 
